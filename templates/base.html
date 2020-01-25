@@ -12,6 +12,12 @@
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
     >
+    
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
 
     <!-- Bootstrap CSS -->
     <link
@@ -29,8 +35,12 @@
     <div class="container-fluid">
         <br>
         <div class="row">
-            <div class="col-sm">
-                <h1 class="text-center">Signatia</h1>
+            <div class="col-sm text-center">
+                <img
+                        src="../static/img/signatio.png"
+                        style="width: 250px; height: auto;"
+                        alt="Signatia"
+                    >
             </div>
         </div>
 
