@@ -2,6 +2,15 @@ body{
 }
 
 .title{
-    width: 200px;
+    width: 250px;
     height: auto;
+}
+
+.modules{
+    width: 130px;
+    height: auto;
+}
+
+.learning-path{
+    font-family: 'Comfortaa', cursive;
 }
