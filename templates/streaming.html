@@ -78,13 +78,15 @@
 
 <script>
     function updateLetter() {
-        capital_letter++;
-        lowercase_letter++;
-        let photo_path = 'static/ASL-Alphabets/';
-        const photo = document.getElementsByClassName('signed-pic')[0];
-        const letter = document.getElementsByClassName('game-letter')[0];
-        photo.src = photo_path + String.fromCharCode(lowercase_letter) + '.jpg';
-        letter.innerHTML = String.fromCharCode(capital_letter);
+        if (String.fromCharCode(capital_letter) != "Z") {
+            capital_letter++;
+            lowercase_letter++;
+            let photo_path = 'static/ASL-Alphabets/';
+            const photo = document.getElementsByClassName('signed-pic')[0];
+            const letter = document.getElementsByClassName('game-letter')[0];
+            photo.src = photo_path + String.fromCharCode(lowercase_letter) + '.jpg';
+            letter.innerHTML = String.fromCharCode(capital_letter);
+        }
     }
 </script>
 
