@@ -1,25 +1,30 @@
-body{
-}
+body {}
 
-.title{
+.title {
     width: 250px;
     height: auto;
 }
 
-.modules{
+.modules {
     width: 130px;
     height: auto;
+    transition: 0.33s;
 }
 
-.learning-path{
+.modules:hover {
+    width: 140px;
+
+}
+
+.learning-path {
     font-family: 'Comfortaa', cursive;
 }
 
-.profile{
+.profile {
     width: 200px;
     height: auto;
 }
 
-.btn-custom{
+.btn-custom {
     border-radius: 50%;
 }
