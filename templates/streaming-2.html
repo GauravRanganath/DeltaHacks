@@ -25,88 +25,154 @@
 
                 <div class="text-center">
                     <form class="form-control-lg">
-                        <div class="form-check form-check-inline">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio1"
-                                value="option1"
-                            >
-                            <label
-                                class="form-check-label"
-                                for="inlineRadio1"
-                            >A</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio2"
-                                value="option2"
-                            >
-                            <label
-                                class="form-check-label"
-                                for="inlineRadio2"
-                            >B</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio3"
-                                value="option3"
-                            >
-                            <label
-                                class="form-check-label"
-                                for="inlineRadio3"
-                            >C</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input
-                                class="form-check-input"
-                                type="radio"
-                                name="inlineRadioOptions"
-                                id="inlineRadio4"
-                                value="option4"
-                            >
-                            <label
-                                class="form-check-label"
-                                for="inlineRadio4"
-                            >D</label>
-                        </div>
-
-                        <div class="text-center">
-                            <br>
-                            <button
-                                type="button"
-                                class="btn btn-custom"
-                            >Go Back
-                            </button>
-
-                            <button
-                                type="button"
-                                class="btn btn-custom"
-                            >Submit
-                            </button>
-                        </div>
-                    </form>
+                        <div class="
+                        form-check
+                        form-check-inline"></div>
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio1"
+                            value="A"
+                        >
+                        <label
+                            class="form-check-label"
+                            for="inlineRadio1"
+                        >A</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio2"
+                        value="B"
+                    >
+                    <label
+                        class="form-check-label"
+                        for="inlineRadio2"
+                    >B</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio3"
+                        value="C"
+                    >
+                    <label
+                        class="form-check-label"
+                        for="inlineRadio3"
+                    >C</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio4"
+                        value="D"
+                    >
+                    <label
+                        class="form-check-label"
+                        for="inlineRadio4"
+                    >D</label>
+                </div>
+
+                <div class="text-center">
+                    <br>
+                    <button
+                        type="button"
+                        class="btn btn-custom"
+                    >Go Back
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-custom"
+                        onclick=isCorrectAnswer()
+                    >Submit
+                    </button>
+                </div>
+                </form>
             </div>
         </div>
-        <br>
     </div>
+    <br>
+</div>
 
-    <div class="col-sm-1"></div>
+<div class="col-sm-1"></div>
 
-    <div class="col-sm-1"></div>
+<div class="col-sm-1"></div>
 </div>
 
 <script>
-    'inlineRadio3'
+    function updateLetter(selectedRadio) {
+        let alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+
+        let radioButtons = document.getElementsByClassName('form-check-input');
+        let labels = document.getElementsByTagName('LABEL');
+
+        let correct_letter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        alphabet = removeLetter(alphabet, correct_letter);
+
+        let wrong_letter1 = alphabet[Math.floor(Math.random() * alphabet.length)];
+        alphabet = removeLetter(alphabet, wrong_letter1);
+
+        let wrong_letter2 = alphabet[Math.floor(Math.random() * alphabet.length)];
+        alphabet = removeLetter(alphabet, wrong_letter2);
+
+        let wrong_letter3 = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+        options = [correct_letter, wrong_letter1, wrong_letter2, wrong_letter3];
+        shuffleArray(options);
+
+        for (var i = 0; i < 4; i++) {
+            radioButtons[i].value = options[i];
+            labels[i].innerHTML = options[i];
+        }
+
+        let photo_path = 'static/ASL-Alphabets/';
+        let photo = document.getElementsByClassName('signed-pic')[0];
+        photo.src = photo_path + correct_letter.toLowerCase() + '.jpg';
+
+        selectedRadio.checked = false;
+    }
+
+    function removeLetter(arr, correct_letter) {
+        return arr.filter(function (letter) {
+            return letter != correct_letter;
+        });
+    }
+
+    function isCorrectAnswer() {
+        let selected;
+        const radioButtons = document.getElementsByClassName('form-check-input');
+
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                selected = radioButtons[i];
+            }
+        }
+        const selectedVal = selected.value;
+        const photoPath = document.getElementsByClassName('signed-pic')[0];
+
+        const letter = photoPath.src.charAt(photoPath.src.length - 5);
+
+        if (letter.toUpperCase() === selectedVal) {
+            updateLetter(selected);
+        }
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 </script>
+
 
 
 {% endblock %}
