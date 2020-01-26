@@ -34,6 +34,24 @@ body {}
     border-width: medium;
 }
 
+.btn-custom:hover{
+    border-radius: 15px 15px 15px 15px;
+    background-color: #2cb6d1; 
+    color: white;
+    border-color: white;
+    border-width: medium;
+}
+
 .game-letter{
     font-size: 180px;
 }
+
+.game-background{
+    background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.signed-pic{
+    border-radius: 15px 15px 15px 15px;
+}
+
