@@ -23,17 +23,48 @@ body {}
 .profile {
     width: 200px;
     height: auto;
-    border-width: thick;
+    border-width: thick !important;
+    border-color: #3490a9 !important;
 }
 
 .btn-custom{
     border-radius: 10px 10px 10px 10px;
     background-color: white; 
-    color: #2cb6d1;
-    border-color: #2cb6d1;
+    color: #3490a9;
+    border-color: #3490a9;
+    border-width: medium;
+}
+
+.btn-custom:hover{
+    border-radius: 15px 15px 15px 15px;
+    background-color: #3490a9; 
+    color: white;
+    border-color: white;
     border-width: medium;
 }
 
 .game-letter{
     font-size: 180px;
 }
+
+.game-background{
+    background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.learning-path-background{
+    background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0 25px 0 25px;
+}
+
+.profile-background{
+    background-color: rgba(44, 182, 209, 0.09);
+    border-radius: 10px 10px 10px 10px;
+    padding: 0 25px 0 25px;
+}
+
+.signed-pic{
+    border-radius: 15px 15px 15px 15px;
+}
+

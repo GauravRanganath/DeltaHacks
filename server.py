@@ -28,5 +28,15 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+@app.route('/streaming-2')
+def webcam2():
+    return render_template('streaming-2.html')
+
+
+@app.route('/streaming-3')
+def webcam3():
+    return render_template('streaming-3.html')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
