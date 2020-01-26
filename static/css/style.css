@@ -18,6 +18,7 @@ body{
 .profile{
     width: 200px;
     height: auto;
+    border-width: thick;
 }
 
 .btn-custom{
@@ -25,4 +26,5 @@ body{
     background-color: white; 
     color: #2cb6d1;
     border-color: #2cb6d1;
+    border-width: medium;
 }
