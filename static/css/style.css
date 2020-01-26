@@ -33,3 +33,7 @@ body {}
     border-color: #2cb6d1;
     border-width: medium;
 }
+
+.game-letter{
+    font-size: 180px;
+}
