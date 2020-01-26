@@ -14,3 +14,12 @@ body{
 .learning-path{
     font-family: 'Comfortaa', cursive;
 }
+
+.profile{
+    width: 200px;
+    height: auto;
+}
+
+.btn-custom{
+    border-radius: 50%;
+}
