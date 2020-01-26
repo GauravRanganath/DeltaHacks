@@ -49,10 +49,6 @@ class ASL_model(object):
         return alphabet
 
     def predict(self, frame, letter_to_get):
-        correct_letter = False
-
-        # black image for the output
-
         # set the corners for the square to initialize the model picture frame
         x_0 = int(frame.shape[1] * 0.1)
         y_0 = int(frame.shape[0] * 0.25)
@@ -94,93 +90,9 @@ class ASL_model(object):
                     letter = self.get_class_label(predict, self.alphabet)
 
                     if letter == letter_to_get:
-                        return "YAY"
-                        correct_letter = True
-                        letter_to_get = self.next_letter(letter_to_get)
-
-                        # if not text_updated:
-                        #     text_updated = True
-                        #     game_text = random.choice(
-                        #         ["Nice one!", "You're a pro!", "You're a natural!", "Have you been practicing?", "You're on a roll!"])
-                    else:
-                        return None
-
+                        return True
         except:
             pass
-
-            # if not self.START:
-            #     paused_text = 'Paused'
-            # else:
-            #     paused_text = ''
-
-            # TEXT INITIALIZATION
-            # paused text
-            # cv2.putText(
-            #     img=frame,
-            #     text=paused_text,
-            #     org=(x_0+140, y_0+195),
-            #     fontFace=cv2.FONT_HERSHEY_PLAIN,
-            #     color=(0, 0, 255),
-            #     fontScale=1
-            # )
-
-            # # helper texts
-            # cv2.putText(
-            #     img=frame,
-            #     text=self.description_text_1,
-            #     org=(10, 440),
-            #     fontFace=cv2.FONT_HERSHEY_PLAIN,
-            #     color=(255, 255, 255),
-            #     fontScale=1
-            # )
-
-            # cv2.putText(
-            #     img=frame,
-            #     text=self.description_text_2,
-            #     org=(10, 455),
-            #     fontFace=cv2.FONT_HERSHEY_PLAIN,
-            #     color=(255, 255, 255),
-            #     fontScale=1
-            # )
-
-            # cv2.putText(
-            #     img=frame,
-            #     text='Place your hand here:',
-            #     org=(x_0-30, y_0-10),
-            #     fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,
-            #     color=(255, 255, 255),
-            #     fontScale=1
-            # )
-
-            # # current letter
-            # cv2.putText(
-            #     img=frame,
-            #     text=letter,
-            #     org=(x_0+10, y_0+20),
-            #     fontFace=cv2.FONT_HERSHEY_PLAIN,
-            #     color=(255, 255, 255),
-            #     fontScale=1
-            # )
-
-            # cv2.putText(
-            #     img=frame,
-            #     text=game_text,
-            #     org=(288, 225),
-            #     fontFace=cv2.FONT_HERSHEY_COMPLEX_SMALL,
-            #     color=(255, 255, 255),
-            #     fontScale=1
-            # )
-
-            # draw rectangle for hand placement
-            # cv2.rectangle(frame, (x_0, y_0), (x_1, y_1), (0, 255, 0), 2)
-
-            # display the resulting frames
-
-            # if cv2.waitKey(30) & 0xFF == ord('s'):
-            #     self.START = not self.START
-
-            # if cv2.waitKey(30) & 0xFF == ord('f'):
-            #     break
 
     def get_class_label(self, val, dictionary):
         """
