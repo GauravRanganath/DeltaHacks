@@ -11,7 +11,8 @@ def index():
 
 @app.route('/streaming')
 def webcam():
-    return render_template('streaming.html')
+    ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    return render_template('streaming.html', alphabet=ALPHABET)
 
 
 def gen(camera):
