@@ -16,7 +16,14 @@ The interactive educational platform was built using Flask and Bootstrap. We als
 
 ## Try it out!
 
-### _Clone the repository_
-`git clone git@github.com:GauravRanganath/DeltaHacks.git`\
+#### 1. Clone the repo
+
+- `git clone git@github.com:GauravRanganath/DeltaHacks.git`
 OR
-`git clone https://github.com/GauravRanganath/DeltaHacks.git`\
+- `git clone https://github.com/GauravRanganath/DeltaHacks.git`
+
+#### 2. Run the file
+
+- `cd DeltaHacks`
+- `./server.py` **OR** `python server.py`
+- Head to `http://localhost:5000` and access the project 
