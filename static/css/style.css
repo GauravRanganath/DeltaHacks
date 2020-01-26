@@ -68,3 +68,17 @@ body {}
     border-radius: 15px 15px 15px 15px;
 }
 
+.locked{
+    filter: grayscale(100%);
+}
+
+.locked:hover{
+    filter: grayscale(0%);
+    animation: normal;
+    animation-duration: 1s;
+}
+
+.gallery{
+    display: flex;
+    justify-content: space-evenly;
+}
