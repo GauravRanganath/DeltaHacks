@@ -3,8 +3,8 @@
 {% block container %}
 
     <div class="row">
-        
-        <div class="col-sm-6">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
             <h2 class="learning-path text-center"><b>Make the Sign</b></h2>
             <br>
             <p class="text-center">Try your best to create the letter with your hand!</p>
@@ -37,13 +37,17 @@
             
         </div>
         
-        <div class="col-sm-6">
+        <div class="col-sm-1"></div>
+        
+        <div class="col-sm-5">
             <div class = "text-center">
                 <img
                     src="{{ url_for('video_feed') }}"
+                    class="w-100"
                 >
             </div>
         </div>
+        <div class="col-sm-1"></div>
     </div>
         
 
