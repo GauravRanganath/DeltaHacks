@@ -21,5 +21,8 @@ body{
 }
 
 .btn-custom{
-    border-radius: 50%;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white; 
+    color: #2cb6d1;
+    border-color: #2cb6d1;
 }
