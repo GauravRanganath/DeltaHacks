@@ -13,7 +13,6 @@ body {}
 
 .modules:hover {
     width: 140px;
-
 }
 
 .learning-path {
@@ -27,58 +26,65 @@ body {}
     border-color: #3490a9 !important;
 }
 
-.btn-custom{
+.profile-friends {
+    width: 125px;
+    height: auto;
+    border-width: thick !important;
+    border-color: #3490a9 !important;
+}
+
+.btn-custom {
     border-radius: 10px 10px 10px 10px;
-    background-color: white; 
+    background-color: white;
     color: #3490a9;
     border-color: #3490a9;
     border-width: medium;
 }
 
-.btn-custom:hover{
+.btn-custom:hover {
     border-radius: 15px 15px 15px 15px;
-    background-color: #3490a9; 
+    background-color: #3490a9;
     color: white;
     border-color: white;
     border-width: medium;
 }
 
-.game-letter{
+.game-letter {
     font-size: 180px;
 }
 
-.game-background{
+.game-background {
     background-color: whitesmoke;
     border-radius: 10px 10px 10px 10px;
 }
 
-.learning-path-background{
+.learning-path-background {
     background-color: whitesmoke;
     border-radius: 10px 10px 10px 10px;
     padding: 0 25px 0 25px;
 }
 
-.profile-background{
+.profile-background {
     background-color: rgba(44, 182, 209, 0.09);
     border-radius: 10px 10px 10px 10px;
     padding: 0 25px 0 25px;
 }
 
-.signed-pic{
+.signed-pic {
     border-radius: 15px 15px 15px 15px;
 }
 
-.locked{
+.locked {
     filter: grayscale(100%);
 }
 
-.locked:hover{
+.locked:hover {
     filter: grayscale(0%);
     animation: normal;
     animation-duration: 1s;
 }
 
-.gallery{
+.gallery {
     display: flex;
     justify-content: space-evenly;
 }

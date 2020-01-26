@@ -5,10 +5,10 @@ import requests
 from PIL import Image, ImageDraw
 import cv2
 import io
-import time
-
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__, static_folder="static")
+socketio = SocketIO(app)
 
 
 @app.route('/')
@@ -66,6 +66,16 @@ def webcam3():
     return render_template('streaming-3.html')
 
 
+@socketio.on('connect')
+def test_connection():
+    emit('')
+
+
+@socketio.on('update')
+def update_letter():
+    emit('_', )
+
+
 def img_to_byte_array(img):
     img_byte_array = io.BytesIO()
     img.save(img_byte_array, format=img.format)
@@ -74,4 +84,4 @@ def img_to_byte_array(img):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, threaded=True)
+    socketio.run(app)
